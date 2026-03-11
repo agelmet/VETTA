@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- SEO & Metadata -->
+    <title>ΨΥΧΟΛΟΓΟΣ ΠΑΛΛΗΝΗ | ΘΕΡΑΠΕΙΑ ΤΡΑΥΜΑΤΟΣ DBR | ΜΑΡΙΕΤΑ ΒΕΤΤΑ</title>
+    <meta name="description" content="Εξειδικευμένη θεραπεία τραύματος (DBR & Focusing) και προσωποκεντρική ψυχοθεραπεία στην Παλλήνη. Ανακτήστε την εσωτερική σας δύναμη σε ένα ασφαλές πλαίσιο.">
+    <meta name="keywords" content="ψυχολογος παλληνη, θεραπεια τραυματος, DBR, focusing, συμβουλος ψυχικης υγειας, online ψυχοθεραπεια, κρισεις πανικου, αυτογνωσια, μαριετα βεττα">
+    <meta property="og:title" content="Μαριέτα Βέττα | Σύμβουλος Ψυχικής Υγείας & Τραυματοθεραπεύτρια">
+    <meta property="og:description" content="Εξειδικευμένη θεραπεία τραύματος και προσωποκεντρική προσέγγιση.">
+    <meta property="og:image" content="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991ccd724813c8a33b45efc.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991ccd724813c8a33b45efc.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#2A2A2A',     // Softer Charcoal
+                            primary: '#4A4A4A',  // Grey text
+                            gold: '#C6A87C',     // Muted Luxury Gold
+                            goldlight: '#F2E6D8', // Very light gold/beige
+                            sand: '#EBE5DE',     // Warm Sand
+                            cream: '#FCFCFA',    // Bright Off-white
+                            white: '#FFFFFF',
+                            surface: '#F7F7F5'   // Secondary light backgrounds
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                        playful: ['"Playfair Display"', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7cc0866550c20ee862.jpg')",
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Typography & Base */
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #FCFCFA;
+            color: #4A4A4A;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FCFCFA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C6A87C;
+            border-radius: 3px;
+        }
+
+        /* Reveal Animations - Default to opacity 1 to prevent white screen, JS will handle fade in if loaded */
+        .reveal-on-scroll {
+            opacity: 0; 
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-stagger.is-visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.1s; }
+        .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.2s; }
+        .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.3s; }
+        .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.4s; }
+
+        /* Glassmorphism Navbar */
+        .glass-nav {
+            background: rgba(252, 252, 250, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(198, 168, 124, 0.15);
+        }
+
+        /* Lightbox */
+        #lightbox {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Image Hover */
+        .hover-image-scale {
+            overflow: hidden;
+        }
+        .hover-image-scale img {
+            transition: transform 0.8s ease;
+        }
+        .hover-image-scale:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Carousel Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Parallax Utility */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center top; 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .parallax-bg {
+                background-attachment: scroll; /* Disable fixed bg on mobile for performance */
+                background-position: center center;
+            }
+        }
+        
+        /* Bento Grid Effects */
+        .bento-card:hover .watermark {
+            opacity: 0.1;
+            transform: scale(1.1);
+        }
+
+        /* Mobile Safe Area */
+        .mobile-menu-safe {
+            padding-top: max(8rem, calc(env(safe-area-inset-top) + 2rem));
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="selection:bg-brand-gold selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-4 group">
+                <div class="relative w-64 h-auto transition-transform duration-500 group-hover:scale-105">
+                     <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/69afc12bddc8c728a4d75669.png" alt="Logo" class="object-contain w-full h-full">
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#about" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-gold transition-colors uppercase">ΒΙΟΓΡΑΦΙΚΟ</a>
+                <a href="#services" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-gold transition-colors uppercase">ΥΠΗΡΕΣΙΕΣ</a>
+                <a href="#expertise" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-gold transition-colors uppercase">ΕΞΕΙΔΙΚΕΥΣΗ</a>
+                <a href="#space" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-gold transition-colors uppercase">Ο ΧΩΡΟΣ</a>
+                <a href="#reviews" class="text-xs font-bold tracking-[0.15em] text-brand-dark hover:text-brand-gold transition-colors uppercase">ΑΞΙΟΛΟΓΗΣΕΙΣ</a>
+                <a href="#contact" class="px-8 py-3 bg-brand-sand text-brand-dark text-xs font-bold tracking-[0.15em] hover:bg-brand-goldlight hover:text-brand-dark transition-all duration-300 shadow-sm hover:shadow-lg uppercase rounded-sm">
+                    ΡΑΝΤΕΒΟΥ
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none">
+                <i data-lucide="menu" class="w-8 h-8 stroke-[1px]"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 h-[100dvh] w-screen bg-white/95 backdrop-blur-xl z-[60] transform translate-x-full transition-transform duration-700 ease-in-out flex flex-col justify-start items-center gap-10 overflow-y-auto mobile-menu-safe pb-10">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-brand-dark hover:rotate-90 transition-transform duration-300 z-[70]">
+                <i data-lucide="x" class="w-10 h-10 stroke-[1px]"></i>
+            </button>
+            <a href="#about" class="mobile-link text-3xl font-serif text-brand-dark uppercase tracking-widest hover:text-brand-gold transition-colors">ΒΙΟΓΡΑΦΙΚΟ</a>
+            <a href="#services" class="mobile-link text-3xl font-serif text-brand-dark uppercase tracking-widest hover:text-brand-gold transition-colors">ΥΠΗΡΕΣΙΕΣ</a>
+            <a href="#expertise" class="mobile-link text-3xl font-serif text-brand-dark uppercase tracking-widest hover:text-brand-gold transition-colors">ΕΞΕΙΔΙΚΕΥΣΗ</a>
+            <a href="#space" class="mobile-link text-3xl font-serif text-brand-dark uppercase tracking-widest hover:text-brand-gold transition-colors">Ο ΧΩΡΟΣ</a>
+            <a href="#reviews" class="mobile-link text-3xl font-serif text-brand-dark uppercase tracking-widest hover:text-brand-gold transition-colors">ΑΞΙΟΛΟΓΗΣΕΙΣ</a>
+            <a href="#contact" class="mobile-link px-12 py-5 bg-brand-gold text-white text-sm font-bold tracking-widest uppercase shadow-xl mt-6 rounded-sm">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[110vh] w-full bg-white flex items-center pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
+            
+            <!-- Text Content (Left) -->
+            <div class="reveal-stagger order-2 lg:order-1 text-left lg:pr-4 flex flex-col items-start">
+                <div class="quote-block mb-8 lg:mb-12 relative z-20 w-full flex justify-end lg:translate-x-16">
+                  <p class="font-playful italic font-bold text-2xl md:text-4xl leading-[1.2] text-brand-dark tracking-wide inline-block text-right">
+                    Ανακτήστε την <span class="text-brand-gold">σύνδεση</span><br>
+                    με τον εαυτό <span class="text-brand-gold">σας</span>
+                  </p>
+                </div>
+                <div class="profile-block w-full text-left">
+                  <h1 class="font-serif text-xl md:text-3xl text-brand-gold uppercase tracking-widest mb-4">ΜΑΡΙΕΤΑ ΒΕΤΤΑ</h1>
+                  <p class="font-sans text-brand-primary text-base md:text-lg font-light leading-relaxed">
+                    MSc Προσωποκεντρική Ψυχοθεραπεία & Συμβουλευτική<br>
+                    Τραυματοθεραπεία DBR
+                  </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-start items-center mt-12 w-full">
+                    <a href="#contact" class="px-12 py-4 bg-brand-gold text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 rounded-sm text-center w-full sm:w-auto">
+                        ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ ΡΑΝΤΕΒΟΥ
+                    </a>
+                    <a href="#about" class="px-12 py-4 bg-transparent border border-brand-gold text-brand-gold text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-gold hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1 rounded-sm text-center w-full sm:w-auto">
+                        ΜΑΘΕΤΕ ΠΕΡΙΣΣΟΤΕΡΑ
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Area (Right) -->
+            <div class="relative reveal-on-scroll order-1 lg:order-2 mt-12 lg:mt-0 flex justify-center lg:justify-end">
+                <div class="aspect-[3/4] rounded-sm overflow-hidden relative z-10 shadow-2xl w-full max-w-md">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991ccd724813c8a33b45efc.jpg" alt="Μαριέτα Βέττα" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 md:py-32 bg-brand-white relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            
+            <!-- Image Area -->
+            <div class="relative reveal-on-scroll order-2 lg:order-1 mt-12 lg:mt-24">
+                <div class="aspect-[4/3] rounded-sm overflow-hidden relative z-10 shadow-2xl">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7cc0866550c20ee862.jpg" alt="Μαριέτα Βέττα Ψυχολόγος" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="reveal-stagger order-1 lg:order-2">
+                <div class="mb-6 flex items-center gap-3">
+                    <span class="w-8 h-[1px] bg-brand-gold"></span>
+                    <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">ΒΙΟΓΡΑΦΙΚΟ</span>
+                </div>
+                <div class="space-y-6 text-brand-primary font-sans leading-loose text-lg font-light text-left">
+                    <p>
+                        Η Μαριέτα Βέττα είναι πιστοποιημένη Προσωποκεντρική Ψυχοθεραπεύτρια-Σύμβουλος ψυχικής υγείας και Τραυματοθεραπεύτρια DBR, με ιδιωτικό γραφείο στην Παλλήνη και μέλος της Ελληνικής Προσωποκεντρικής και Βιωματικής Εταιρείας (ΕΠΒΕ).
+                    </p>
+                    <p>
+                        Έχει αποκτήσει τον τίτλο του Master στην Προσωποκεντρική Συμβουλευτική και Ψυχοθεραπεία από το University of Strathclyde και το Institute of Counselling and Psychotherapy (ICPS). Παράλληλα, κατέχει πιστοποιήσεις στην Τραυματοθεραπεία DBR (Deep Brain Reorinting), στο Focusing Skills και στο Focusing and Trauma από την British Focusing Association.
+                    </p>
+                    <button onclick="openAboutModal()" id="about-read-more-btn" class="inline-flex items-center text-[10px] font-bold tracking-widest uppercase text-brand-dark hover:text-brand-gold transition-colors mt-4">
+                        ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ <i data-lucide="chevron-right" class="w-3 h-3 ml-2"></i>
+                    </button>
+                </div>
+                
+                <div class="mt-12 pt-10 border-t border-brand-sand flex items-center gap-6">
+                    <div class="p-4 bg-brand-surface rounded-sm border border-brand-gold/10">
+                        <span class="font-serif text-2xl md:text-3xl text-brand-dark block">MSc</span>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-primary/60">University of Strathclyde</span>
+                    </div>
+                    <div class="p-4 bg-brand-surface rounded-sm border border-brand-gold/10">
+                        <span class="font-serif text-2xl md:text-3xl text-brand-dark block">DBR</span>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-primary/60">Deep Brain Reorienting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Divider -->
+    <section class="py-32 parallax-bg flex items-center justify-center relative" style="background-image: url('https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b88407fc39dea.jpg');">
+        <div class="absolute inset-0 bg-white/70"></div>
+        <div class="relative z-10 text-center max-w-3xl px-6">
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-dark leading-tight italic">
+                "Το σώμα θυμάται αυτά που το μυαλό προσπαθεί να ξεχάσει."
+            </h3>
+        </div>
+    </section>
+
+    <!-- Expertise / Trustworthiness Section (WOW Factor) -->
+    <section id="expertise" class="py-32 bg-brand-cream relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-24 reveal-on-scroll">
+                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">ΓΙΑΤΙ ΝΑ ΜΕ ΕΠΙΛΕΞΕΤΕ</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mt-4 uppercase">ΕΞΕΙΔΙΚΕΥΣΗ & ΕΜΠΕΙΡΙΑ</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 reveal-stagger">
+                
+                <!-- Card 1 -->
+                <div class="bento-card group relative p-10 bg-white rounded-sm shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-brand-sand/30">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-brand-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-surface flex items-center justify-center rounded-full mb-8 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-500">
+                            <i data-lucide="brain-circuit" class="w-7 h-7 stroke-[1.5px]"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-4 uppercase tracking-wide text-brand-dark group-hover:text-brand-gold transition-colors">ΕΞΕΙΔΙΚΕΥΣΗ ΣΤΟ ΤΡΑΥΜΑ (DBR)</h3>
+                        <div class="text-sm text-brand-primary/80 leading-relaxed font-light mb-4 space-y-4 text-left">
+                            <p>Το Deep Brain Reorienting (DBR), αναπτυγμένο από τον διακεκριμένο ψυχίατρο Dr. Frank Corrigan, είναι μια πρωτοποριακή μέθοδος που εστιάζει στην επεξεργασία του τραύματος στα βαθύτερα επίπεδα του εγκεφαλικού στελέχους.</p>
+                            <p>Ανιχνεύοντας την αρχική φυσιολογική απόκριση τη στιγμή της απειλής, το DBR αποδεσμεύει τις «εγκλωβισμένες» σωματικές αντιδράσεις, προσφέροντας βαθιά θεραπεία εκεί που οι παραδοσιακές λεκτικές μέθοδοι συχνά δεν φτάνουν.</p>
+                            
+                            <button onclick="toggleDbrDetails()" id="dbr-more-btn" class="text-brand-gold font-bold text-xs uppercase tracking-widest hover:text-brand-dark transition-colors mt-2 flex items-center gap-1">
+                                ΠΕΡΙΣΣΟΤΕΡΑ... <i data-lucide="chevron-down" class="w-3 h-3 transition-transform duration-300" id="dbr-chevron"></i>
+                            </button>
+                            
+                            <div id="dbr-details" class="hidden mt-4 space-y-4">
+                                <p class="font-bold text-brand-dark">Τα Οφέλη στην Καθημερινότητά σας:</p>
+                                <p>Μέσω του DBR, το αυτόνομο νευρικό σύστημα «ξεκλειδώνει» από την κατάσταση διαρκούς συναγερμού (fight/flight/freeze), επαναφέροντας τον οργανισμό σε μια φυσική κατάσταση ηρεμίας και ασφάλειας. Αυτό μεταφράζεται σε:</p>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li>Άμεση μείωση του χρόνιου άγχους και της υπερδιέγερσης.</li>
+                                    <li>Καλύτερη διαχείριση των συναισθηματικών μεταπτώσεων.</li>
+                                    <li>Αυξημένη ψυχική ανθεκτικότητα και ψυχραιμία απέναντι στις προκλήσεις.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Watermark -->
+                    <span class="watermark absolute -bottom-10 -right-6 text-9xl font-serif text-brand-surface font-bold opacity-30 transition-all duration-700 pointer-events-none">01</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bento-card group relative p-10 bg-white rounded-sm shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-brand-sand/30">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-brand-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-surface flex items-center justify-center rounded-full mb-8 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-500">
+                            <i data-lucide="activity" class="w-7 h-7 stroke-[1.5px]"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-4 uppercase tracking-wide text-brand-dark group-hover:text-brand-gold transition-colors">ΠΡΟΣΩΠΟΚΕΝΤΡΙΚΗ ΠΡΟΣΕΓΓΙΣΗ</h3>
+                        <p class="text-sm text-brand-primary/80 leading-relaxed font-light mb-4 text-left">
+                            Ο Carl Rogers, κορυφαίος Αμερικανός ψυχολόγος και «πατέρας» της Ανθρωπιστικής Ψυχολογίας, δημιούργησε μια προσέγγιση που αποτελεί το απόλυτο «αντίδοτο» στο σύγχρονο στρες. Είναι ένα ταξίδι επανασύνδεσης με τον αληθινό σου εαυτό, όπου η άνευ όρων αποδοχή ξεκλειδώνει την εσωτερική σου δύναμη να «γίνεις αυτό που πραγματικά είσαι», ελεύθερος από τις «μάσκες» και τις προσδοκίες των άλλων. Στον σημερινό κόσμο της ψηφιακής εικόνας και της τελειομανίας, η μέθοδος αυτή μειώνει το άγχος βοηθώντας σε να κλείσεις τον εξωτερικό θόρυβο και να εμπιστευτείς την εσωτερική σου πυξίδα. Έτσι, χτίζεις μια βαθιά αυτοεκτίμηση που μεταμορφώνει τις σχέσεις σου από επιφανειακές σε ουσιαστικές, αφού μόνο η δική σου αυθεντικότητα μπορεί να δημιουργήσει χώρο για αληθινή σύνδεση και αμοιβαίο σεβασμό.
+                        </p>
+                    </div>
+                    <!-- Watermark -->
+                    <span class="watermark absolute -bottom-10 -right-6 text-9xl font-serif text-brand-surface font-bold opacity-30 transition-all duration-700 pointer-events-none">02</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bento-card group relative p-10 bg-white rounded-sm shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-brand-sand/30">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-brand-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-surface flex items-center justify-center rounded-full mb-8 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-500">
+                            <i data-lucide="graduation-cap" class="w-7 h-7 stroke-[1.5px]"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-4 uppercase tracking-wide text-brand-dark group-hover:text-brand-gold transition-colors">ΑΚΑΔΗΜΑΪΚΟ ΥΠΟΒΑΘΡΟ</h3>
+                        <p class="text-sm text-brand-primary/80 leading-relaxed font-light mb-4 text-left">
+                            Κάτοχος Master (MSc) από το University of Strathclyde, ενός από τα κορυφαία πανεπιστήμια στην Προσωποκεντρική προσέγγιση.
+                        </p>
+                    </div>
+                    <!-- Watermark -->
+                    <span class="watermark absolute -bottom-10 -right-6 text-9xl font-serif text-brand-surface font-bold opacity-30 transition-all duration-700 pointer-events-none">03</span>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bento-card group relative p-10 bg-white rounded-sm shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-brand-sand/30">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-brand-gold transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-brand-surface flex items-center justify-center rounded-full mb-8 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-500">
+                            <i data-lucide="heart-handshake" class="w-7 h-7 stroke-[1.5px]"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl mb-4 uppercase tracking-wide text-brand-dark group-hover:text-brand-gold transition-colors">ΚΛΙΝΙΚΗ ΕΜΠΕΙΡΙΑ</h3>
+                        <p class="text-sm text-brand-primary/80 leading-relaxed font-light mb-4 text-left">
+                            Πολυετής εμπειρία στην ατομική ψυχοθεραπεία ενηλίκων. Συνεργασία με αναγνωρισμένους φορείς (Κλίμακα, Εταιρεία Alzheimer, Συν-Ύπαρξη κ.ά) με εμπειρία σε σύνθετα περιβάλλοντα φροντίδας.
+                        </p>
+                    </div>
+                    <!-- Watermark -->
+                    <span class="watermark absolute -bottom-10 -right-6 text-9xl font-serif text-brand-surface font-bold opacity-30 transition-all duration-700 pointer-events-none">04</span>
+                </div>
+            </div>
+
+            <!-- Roadmap Section -->
+            <div class="mt-32 reveal-on-scroll">
+                <div class="text-center mb-16">
+                     <h3 class="text-2xl md:text-3xl font-serif text-brand-dark uppercase tracking-widest">ΤΟ ΘΕΡΑΠΕΥΤΙΚΟ ΤΑΞΙΔΙ</h3>
+                </div>
+                <div class="relative max-w-5xl mx-auto">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-px bg-brand-gold/30 hidden md:block"></div>
+                    
+                    <!-- Steps -->
+                    <div class="space-y-16 relative">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-20 group">
+                            <div class="flex-1 text-center md:text-right order-2 md:order-1 transition-transform group-hover:-translate-x-2 duration-300">
+                                <h4 class="font-serif text-2xl mb-3 text-brand-dark uppercase">ΑΞΙΟΛΟΓΗΣΗ & ΣΥΝΔΕΣΗ</h4>
+                                <p class="text-base text-brand-primary/70 font-light">Δημιουργία ασφαλούς πλαισίου και κατανόηση των αναγκών σας.</p>
+                            </div>
+                            <div class="w-14 h-14 bg-white border border-brand-gold text-brand-gold rounded-full flex items-center justify-center font-serif text-xl shrink-0 z-10 order-1 md:order-2 shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-colors">1</div>
+                            <div class="flex-1 order-3 hidden md:block"></div>
+                        </div>
+
+                         <!-- Step 2 -->
+                         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-20 group">
+                            <div class="flex-1 hidden md:block order-1"></div>
+                            <div class="w-14 h-14 bg-brand-gold text-white rounded-full flex items-center justify-center font-serif text-xl shrink-0 z-10 order-1 md:order-2 shadow-lg scale-110">2</div>
+                            <div class="flex-1 text-center md:text-left order-2 md:order-3 transition-transform group-hover:translate-x-2 duration-300">
+                                <h4 class="font-serif text-2xl mb-3 text-brand-dark uppercase">ΕΠΕΞΕΡΓΑΣΙΑ (DBR & FOCUSING)</h4>
+                                <p class="text-base text-brand-primary/70 font-light">Ρύθμιση του νευρικού συστήματος και επεξεργασία τραυματικών εγγραφών.</p>
+                            </div>
+                        </div>
+
+                         <!-- Step 3 -->
+                         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-20 group">
+                            <div class="flex-1 text-center md:text-right order-2 md:order-1 transition-transform group-hover:-translate-x-2 duration-300">
+                                <h4 class="font-serif text-2xl mb-3 text-brand-dark uppercase">ΕΝΣΩΜΑΤΩΣΗ & ΑΥΤΟΝΟΜΙΑ</h4>
+                                <p class="text-base text-brand-primary/70 font-light">Ανάκτηση ελέγχου, σταθερότητας και εσωτερικής δύναμης.</p>
+                            </div>
+                            <div class="w-14 h-14 bg-white border border-brand-gold text-brand-gold rounded-full flex items-center justify-center font-serif text-xl shrink-0 z-10 order-1 md:order-2 shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-colors">3</div>
+                            <div class="flex-1 order-3 hidden md:block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-brand-white relative overflow-hidden">
+        <!-- Abstract BG Elements -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-goldlight/40 rounded-full filter blur-[120px] opacity-60 -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-sand/40 rounded-full filter blur-[120px] opacity-60 translate-y-1/2 -translate-x-1/3"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="mb-20 reveal-on-scroll text-center">
+                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">ΤΙ ΠΡΟΣΦΕΡΩ</span>
+                <h2 class="text-4xl md:text-6xl font-serif text-brand-dark mt-4 uppercase">ΘΕΡΑΠΕΥΤΙΚΕΣ ΥΠΗΡΕΣΙΕΣ</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-stagger">
+                <!-- Service 1 -->
+                <div class="group relative bg-white border border-brand-surface p-10 md:p-14 rounded-sm hover:shadow-2xl hover:border-brand-gold/20 transition-all duration-500">
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-8">
+                            <i data-lucide="fingerprint" class="w-12 h-12 text-brand-gold stroke-[1px]"></i>
+                            <span class="text-5xl font-serif text-brand-sand opacity-50 group-hover:text-brand-gold/20 transition-colors">01</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-4 uppercase tracking-wide">ΘΕΡΑΠΕΙΑ ΤΡΑΥΜΑΤΟΣ (DBR-FOCUSING)</h3>
+                        <p class="text-brand-primary/70 mb-8 text-base leading-relaxed font-light">
+                            Το τραύμα δημιουργείται όταν μια εμπειρία υπερβαίνει την ικανότητα διαχείρισης. Μέσω DBR και Focusing, στοχεύουμε στη ρύθμιση του νευρικού συστήματος και την επεξεργασία όσων έχουν "αποθηκευτεί" στο σώμα.
+                        </p>
+                        <ul class="text-xs text-brand-dark/60 space-y-3 mb-0 uppercase tracking-widest font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΤΡΑΥΜΑ & ΨΥΧΟΣΩΜΑΤΙΚΕΣ ΔΙΑΤΑΡΑΧΕΣ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΧΡΟΝΙΟ ΣΤΡΕΣ & ΥΠΕΡΕΝΤΑΣΗ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΠΑΓΩΜΑ ΝΕΥΡΙΚΟΥ ΣΥΣΤΗΜΑΤΟΣ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group relative bg-white border border-brand-surface p-10 md:p-14 rounded-sm hover:shadow-2xl hover:border-brand-gold/20 transition-all duration-500">
+                    <div class="relative z-10">
+                         <div class="flex justify-between items-start mb-8">
+                            <i data-lucide="user" class="w-12 h-12 text-brand-gold stroke-[1px]"></i>
+                            <span class="text-5xl font-serif text-brand-sand opacity-50 group-hover:text-brand-gold/20 transition-colors">02</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-4 uppercase tracking-wide">ΑΤΟΜΙΚΗ ΨΥΧΟΘΕΡΑΠΕΙΑ</h3>
+                        <p class="text-brand-primary/70 mb-8 text-base leading-relaxed font-light">
+                            Ένα πλαίσιο βαθιάς ενσυναίσθησης και αποδοχής. Για ανθρώπους που επιθυμούν να κατανοήσουν τα μοτίβα συμπεριφοράς τους, να ενισχύσουν την αυτοεκτίμησή τους και να συνδεθούν αυθεντικά με τις ανάγκες τους.
+                        </p>
+                         <ul class="text-xs text-brand-dark/60 space-y-3 mb-0 uppercase tracking-widest font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΑΥΤΟΓΝΩΣΙΑ & ΑΥΤΟΕΙΚΟΝΑ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΓΥΝΑΙΚΕΙΑ ΕΝΔΥΝΑΜΩΣΗ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΠΡΟΣΩΠΙΚΗ ΑΝΑΠΤΥΞΗ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <!-- Service 3 -->
+                 <div class="group relative bg-white border border-brand-surface p-10 md:p-14 rounded-sm hover:shadow-2xl hover:border-brand-gold/20 transition-all duration-500">
+                    <div class="relative z-10">
+                         <div class="flex justify-between items-start mb-8">
+                            <i data-lucide="heart-crack" class="w-12 h-12 text-brand-gold stroke-[1px]"></i>
+                            <span class="text-5xl font-serif text-brand-sand opacity-50 group-hover:text-brand-gold/20 transition-colors">03</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-4 uppercase tracking-wide">ΔΙΑΧΕΙΡΙΣΗ ΣΥΝΑΙΣΘΗΜΑΤΩΝ</h3>
+                        <p class="text-brand-primary/70 mb-8 text-base leading-relaxed font-light">
+                            Εξειδικευμένη υποστήριξη για πένθος, θυμό, φοβίες και βαθιά θλίψη. Εστιάζουμε στο πώς τα συναισθήματα βιώνονται σωματικά για την αποφόρτιση και τη νοηματοδότησή τους.
+                        </p>
+                        <ul class="text-xs text-brand-dark/60 space-y-3 mb-0 uppercase tracking-widest font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΠΕΝΘΟΣ & ΑΠΩΛΕΙΑ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΔΙΑΧΕΙΡΙΣΗ ΘΥΜΟΥ & ΦΟΒΙΩΝ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΣΥΜΒΟΥΛΕΥΤΙΚΗ ΣΧΕΣΕΩΝ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <!-- Service 4 -->
+                 <div class="group relative bg-white border border-brand-surface p-10 md:p-14 rounded-sm hover:shadow-2xl hover:border-brand-gold/20 transition-all duration-500">
+                    <div class="relative z-10">
+                         <div class="flex justify-between items-start mb-8">
+                            <i data-lucide="wifi" class="w-12 h-12 text-brand-gold stroke-[1px]"></i>
+                            <span class="text-5xl font-serif text-brand-sand opacity-50 group-hover:text-brand-gold/20 transition-colors">04</span>
+                        </div>
+                        <h3 class="text-2xl font-serif text-brand-dark mb-4 uppercase tracking-wide">ONLINE ΨΥΧΟΘΕΡΑΠΕΙΑ</h3>
+                        <p class="text-brand-primary/70 mb-8 text-base leading-relaxed font-light">
+                            Για όσους δεν μπορούν να προσέλθουν στο γραφείο στην Παλλήνη. Η διαδικτυακή θεραπεία διατηρεί τον βιωματικό και προσωποκεντρικό χαρακτήρα της παρέμβασης μέσω ασφαλούς ψηφιακού περιβάλλοντος.
+                        </p>
+                         <ul class="text-xs text-brand-dark/60 space-y-3 mb-0 uppercase tracking-widest font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΣΥΝΕΔΡΙΕΣ ΜΕΣΩ TEAMS / VIBER / ZOOM</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΙΔΙΑ ΔΕΣΜΕΥΣΗ & ΠΟΙΟΤΗΤΑ</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span> ΕΥΕΛΙΞΙΑ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space Section (Gallery) -->
+    <section id="space" class="py-24 bg-brand-cream border-y border-brand-sand/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 reveal-on-scroll">
+                <div>
+                    <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">ΠΕΡΙΒΑΛΛΟΝ</span>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mt-4 uppercase">Ο ΧΩΡΟΣ</h2>
+                </div>
+                <p class="text-brand-primary/60 text-base max-w-md mt-6 md:mt-0 text-left font-light">
+                    Ένα ασφαλές, ήρεμο και φιλόξενο περιβάλλον σχεδιασμένο για να διευκολύνει την εσωτερική αναζήτηση και τη χαλάρωση.
+                </p>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 reveal-stagger" id="gallery-grid">
+                <!-- Images added dynamically via JS or hardcoded below -->
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(0)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991ccb70084987b43a9fc7c.jpg" class="w-full h-auto" alt="Space 1">
+                </div>
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(1)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b888cd4c39dec.jpg" class="w-full h-auto" alt="Space 2">
+                </div>
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(2)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c008498df82a9f498.jpg" class="w-full h-auto" alt="Space 3">
+                </div>
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(3)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c24813c1583b455d1.jpg" class="w-full h-auto" alt="Space 4">
+                </div>
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(4)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b886a01c39ddf.jpg" class="w-full h-auto" alt="Space 5">
+                </div>
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(5)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c00849823eca9f499.jpg" class="w-full h-auto" alt="Space 6">
+                </div>
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(6)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b88407fc39dea.jpg" class="w-full h-auto" alt="Space 7">
+                </div>
+                <div class="break-inside-avoid cursor-pointer hover-image-scale rounded-sm shadow-md" onclick="openLightbox(7)">
+                    <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b8813a3c39deb.jpg" class="w-full h-auto" alt="Space 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-white border-b border-brand-sand/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-12 reveal-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-serif text-brand-dark uppercase">ΤΙ ΛΕΝΕ ΟΙ ΘΕΡΑΠΕΥΟΜΕΝΟΙ</h2>
+                <div class="flex gap-4">
+                    <button id="prevReview" class="w-12 h-12 rounded-full border border-brand-primary/20 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                    <button id="nextReview" class="w-12 h-12 rounded-full border border-brand-primary/20 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div class="overflow-x-auto no-scrollbar pb-8" id="reviews-carousel">
+                <div class="flex gap-6 w-max" id="reviews-track">
+                    <!-- Javascript will inject reviews here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-brand-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+            <div>
+                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">ΕΠΙΚΟΙΝΩΝΙΑ</span>
+                <h2 class="text-4xl md:text-6xl font-serif mt-4 mb-8 uppercase text-brand-dark">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</h2>
+                <p class="text-brand-primary/70 text-xl mb-12 max-w-md font-light leading-relaxed">
+                    Είμαι εδώ για να ακούσω και να υποστηρίξω το ταξίδι σας. Επικοινωνήστε μαζί μου για να προγραμματίσουμε την πρώτη μας συνεδρία.
+                </p>
+
+                <div class="space-y-10">
+                    <div class="flex items-start gap-8 group">
+                        <div class="w-14 h-14 bg-white border border-brand-gold/20 rounded-full flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="map-pin" class="w-6 h-6 stroke-[1.5px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-serif mb-2 uppercase text-brand-dark">ΔΙΕΥΘΥΝΣΗ</h4>
+                            <p class="text-brand-primary/70 font-sans text-base">ΑΛΑΜΑΝΑΣ 10 & ΘΕΡΜΟΠΥΛΩΝ 31Β<br>ΠΑΛΛΗΝΗ, ΑΤΤΙΚΗ</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-8 group">
+                        <div class="w-14 h-14 bg-white border border-brand-gold/20 rounded-full flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="phone" class="w-6 h-6 stroke-[1.5px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-serif mb-2 uppercase text-brand-dark">ΤΗΛΕΦΩΝΟ</h4>
+                            <a href="tel:6938600022" class="text-brand-primary/70 font-sans text-base hover:text-brand-gold transition-colors text-xl font-light">693 860 0022</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-8 group">
+                        <div class="w-14 h-14 bg-white border border-brand-gold/20 rounded-full flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="mail" class="w-6 h-6 stroke-[1.5px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-serif mb-2 uppercase text-brand-dark">EMAIL</h4>
+                            <a href="mailto:maarjeta@yahoo.gr" class="text-brand-primary/70 font-sans text-base hover:text-brand-gold transition-colors">maarjeta@yahoo.gr</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 flex gap-6">
+                    <a href="https://www.facebook.com/p/Μαριέτα-Βέττα-Σύμβουλος-Ψυχικής-Υγείας-100057313905028/?locale=el_GR" target="_blank" class="w-14 h-14 border border-brand-dark/10 rounded-full flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white text-brand-dark transition-all">
+                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.instagram.com/marietavetta/" target="_blank" class="w-14 h-14 border border-brand-dark/10 rounded-full flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white text-brand-dark transition-all">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/vetta-marieta" target="_blank" class="w-14 h-14 border border-brand-dark/10 rounded-full flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white text-brand-dark transition-all">
+                        <i data-lucide="stethoscope" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="bg-white p-2 rounded-sm h-full min-h-[450px] shadow-lg border border-brand-sand/30">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.025244510345!2d23.8824153!3d37.9983997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1990422502f1d%3A0x6a0c0e5a5a5a5a5a!2sAlamanas%2010%2C%20Pallini%20153%2051!5e0!3m2!1sen!2sgr!4v1620000000000!5m2!1sen!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-cream border-t border-brand-gold/10 py-12 text-center text-brand-primary/50 text-xs font-sans font-medium">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 MARIETA VETTA. ALL RIGHTS RESERVED.</p>
+            <p class="uppercase tracking-widest flex items-center gap-1">
+                DESIGNED BY <a href="https://advonmedia.com" class="text-brand-gold hover:underline">ADVON MEDIA</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-white/95 backdrop-blur-md flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-brand-dark hover:text-brand-gold transition-colors">
+            <i data-lucide="x" class="w-10 h-10 stroke-[1px]"></i>
+        </button>
+        <button onclick="prevImage()" class="absolute left-4 md:left-10 text-brand-dark hover:text-brand-gold transition-colors">
+            <i data-lucide="chevron-left" class="w-12 h-12 stroke-[1px]"></i>
+        </button>
+        <button onclick="nextImage()" class="absolute right-4 md:right-10 text-brand-dark hover:text-brand-gold transition-colors">
+            <i data-lucide="chevron-right" class="w-12 h-12 stroke-[1px]"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Gallery Fullscreen" class="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl rounded-sm">
+    </div>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="fixed inset-0 z-[100] bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-brand-white max-w-2xl w-full rounded-sm shadow-2xl p-8 md:p-12 relative max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300" id="about-modal-content">
+            <button onclick="closeAboutModal()" class="absolute top-6 right-6 text-brand-dark hover:text-brand-gold transition-colors">
+                <i data-lucide="x" class="w-8 h-8 stroke-[1.5px]"></i>
+            </button>
+            
+            <div class="mb-8 flex items-center gap-3">
+                <span class="w-8 h-[1px] bg-brand-gold"></span>
+                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">ΠΕΡΙΣΣΟΤΕΡΑ</span>
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl font-serif text-brand-dark mb-6 uppercase">Η ΘΕΡΑΠΕΥΤΙΚΗ ΠΡΟΣΕΓΓΙΣΗ</h3>
+            
+            <div class="space-y-6 text-brand-primary font-sans leading-loose text-base md:text-lg font-light text-left">
+                <p>
+                    Έχει πολυετή εμπειρία συνεργασίας με κοινωνικούς και θεραπευτικούς φορείς (Κλίμακα, Συνύπαρξη, Εταιρεία Alzheimer Αθηνών κ.ά.) και έχει συντονίσει ομάδες προσωπικής ανάπτυξης με βιωματικά και καλλιτεχνικά εργαλεία. Η βαθιά της σύνδεση με το σώμα ενισχύεται από τη μακρόχρονη ενασχόλησή της με τον σύγχρονο και κλασικό χορό και τη yoga, καθώς και από τη διδακτική της εμπειρία στην Παιδαγωγική Ψυχολογία.
+                </p>
+                <p>
+                    Η θεραπευτική της προσέγγιση είναι Προσωποκεντρική και βιωματική, με έμφαση στη θεραπευτική σχέση, τη σωματική επίγνωση και την ασφαλή ρύθμιση του νευρικού συστήματος.
+                </p>
+                <p>
+                    Ο συνδυασμός Προσωποκεντρικής Ψυχοθεραπείας, Focusing και τραυματοθεραπείας DBR προσφέρει ένα ολοκληρωμένο, ασφαλές και σε βάθος θεραπευτικό πλαίσιο, που σέβεται τον ρυθμό του κάθε ανθρώπου.
+                </p>
+                <p>
+                    Στο πλαίσιο της θεραπείας, εργάζεται με θέματα όπως: τραύμα, άγχος, κρίσεις πανικού, πένθος, θυμό, φοβίες, διαπροσωπικές σχέσεις και ζητήματα αυτογνωσίας και προσωπικής ανάπτυξης, όταν υπάρχει διάθεση για δέσμευση και ενεργή συμμετοχή στην θεραπευτική διαδικασία.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        // DBR Details Toggle
+        window.toggleDbrDetails = function() {
+            const details = document.getElementById('dbr-details');
+            const btn = document.getElementById('dbr-more-btn');
+            
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                details.classList.add('animate-fade-in-up');
+                btn.innerHTML = 'ΛΙΓΟΤΕΡΑ... <i data-lucide="chevron-up" class="w-3 h-3"></i>';
+                lucide.createIcons();
+            } else {
+                details.classList.add('hidden');
+                details.classList.remove('animate-fade-in-up');
+                btn.innerHTML = 'ΠΕΡΙΣΣΟΤΕΡΑ... <i data-lucide="chevron-down" class="w-3 h-3"></i>';
+                lucide.createIcons();
+            }
+        };
+
+        // About Modal Logic
+        const aboutModal = document.getElementById('about-modal');
+        const aboutModalContent = document.getElementById('about-modal-content');
+
+        window.openAboutModal = function() {
+            aboutModal.classList.remove('opacity-0', 'pointer-events-none');
+            aboutModalContent.classList.remove('scale-95');
+            aboutModalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeAboutModal = function() {
+            aboutModal.classList.add('opacity-0', 'pointer-events-none');
+            aboutModalContent.classList.remove('scale-100');
+            aboutModalContent.classList.add('scale-95');
+            document.body.style.overflow = '';
+        };
+
+        // Close modal on background click
+        aboutModal.addEventListener('click', (e) => {
+            if (e.target === aboutModal) {
+                closeAboutModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !aboutModal.classList.contains('opacity-0')) {
+                closeAboutModal();
+            }
+        });
+
+        // Data for Reviews
+        const reviews = [
+            { name: "ΑΝΑΣΤΑΣΙΑ", score: "10.0", date: "12 ΣΕΠΤΕΜΒΡΙΟΥ 2024", text: "Πήγα για να αντιμετωπίσω τις κρίσεις πανικού κ τις φοβίες μου .Από την πρώτη στιγμή που μπήκα στο χώρο της με έκανε να αισθανθώ οικεία . Με αντιμετώπισε ζεστά και με ανθρωπιά ,το οποίο για εμένα είναι πολύ βασικό.Με ακούει πάντα με προσοχή σε ότι έχω να της πω ! Προσπαθούμε κάθε φορά να εμβαθύνουμε σε κάποιο θέμα κ να βρούμε την λύση του :) Με έχει βοηθήσει πάρα πολύ στο πρόβλημα που αντιμετωπίζω αλλά και στο να βρίσκω σιγά σιγά τον εαυτό μου :) Γην προτείνω με κλειστά μάτια !" },
+            { name: "ΓΕΩΡΓΙΑ", score: "10.0", date: "09 ΜΑΡΤΙΟΥ 2023", text: "Μου σύστησε την Μαριέτα μια φιλη πριν πολλά χρόνια και νιώθω παρά πολύ τυχερη που την βρήκα!Κάναμε ένα μεγάλο ταξίδι μέσα από την θεραπεία που με οδήγησε σε καλύτερες μέρες. Πιστεύω πως έχει όλα τα χαρίσματα αλλά και όλες τις γνώσεις για να είναι φωτεινός φάρος κατά την διάρκεια αυτής της διαδικασίας. Επίσης είναι ένας υπέροχος άνθρωπος με μεγάλη καρδιά. Την συστήνω αληθινά ανεπιφύλακτα. Γίνεται πραγματική δουλειά." },
+            { name: "ΧΡΗΣΤΟΣ", score: "10.0", date: "11 ΙΟΥΛΙΟΥ 2025", text: "Μετά από 8-9 μήνες συνεδριών, ήθελα να γράψω εδώ πόσο ικανοποιημένος είμαι από τις συνεδρίες με τη Μαριέτα. Με βοήθησε να κατανοήσω πράγματα για τον εαυτό μου που δεν είχα αναλογιστεί ποτέ, και πάντα γνωρίζει πώς να εντοπίσει τα κατάλληλα σημεία να συγκεντρωθώ, ειδικά τις στιγμές που είναι όλα λίγο χαοτικά." },
+            { name: "ΕΥΣΤΡΑΤΙΟΣ", score: "10.0", date: "14 ΙΑΝΟΥΑΡΙΟΥ 2026", text: "Με την κα Βέττα κάναμε μία ειδική θεραπεία για το τραύμα... Ένιωσα ότι είχε τη γνώση και το χάρισμα να με συνοδεύσει..." },
+            { name: "ΙΩΑΝΝΑ", score: "10.0", date: "14 ΙΑΝΟΥΑΡΙΟΥ 2026", text: "Η κα Βέττα είναι ένας άνθρωπος που πραγματικά σε ακούει και σε νιώθει." },
+            { name: "ΑΘΑΝΑΣΙΟΣ", score: "10.0", date: "02 ΝΟΕΜΒΡΙΟΥ 2025", text: "Σωστή επαγγελματίας με υψηλή ενσυναίσθηση." },
+            { name: "ΡΟΥΣΣΟΣ", score: "10.0", date: "26 ΣΕΠΤΕΜΒΡΙΟΥ 2025", text: "Η Μαριέττα προσφέρει μια ασφαλή και ενδυναμωτική θεραπευτική σχέση..." },
+            { name: "ΖΕΥΓΩΛΗΣ", score: "10.0", date: "06 ΑΥΓΟΥΣΤΟΥ 2025", text: "Με την ηρεμία, τη συνέπεια και το ζεστό της χαμόγελο, με βοήθησε να κατανοήσω καλύτερα τον εαυτό μου..." },
+            { name: "ΧΑΛΑΡΗ", score: "10.0", date: "05 ΑΥΓΟΥΣΤΟΥ 2025", text: "Εξαιρετικη επαγγελματιας. Με βοηθησε να βρω εμενα, να αποκτησω ξανα φωνη." },
+            { name: "ΤΣΕΒΑΣ", score: "9.8", date: "18 ΙΟΥΛΙΟΥ 2025", text: "Με κέρδισε το χαμόγελο της και ο τρόπος που ξεκλείδωσε ένα ένα τα κουτάκια που είχα βαθιά κρυμμένα." },
+            { name: "ΓΙΩΡΓΟΣ", score: "10.0", date: "10 ΦΕΒΡΟΥΑΡΙΟΥ 2025", text: "Σωστή επαγγελματίας και καλός άνθρωπος!" }
+        ];
+
+        // Render Reviews
+        const reviewsTrack = document.getElementById('reviews-track');
+        reviews.forEach(review => {
+            const div = document.createElement('div');
+            div.className = "w-[350px] md:w-[450px] flex-shrink-0 bg-brand-surface p-10 rounded-sm shadow-sm border border-brand-sand/50 flex flex-col justify-between hover:shadow-lg transition-all duration-300";
+            div.innerHTML = `
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-3xl font-serif text-brand-dark font-medium">${review.score}</span>
+                                <div class="flex text-brand-gold gap-0.5">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-xs tracking-widest uppercase text-brand-dark">${review.name}</h4>
+                        </div>
+                        <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="doctoranytime" class="h-6 opacity-40 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <p class="text-brand-primary/70 italic mb-6 leading-relaxed text-sm line-clamp-4 font-light">"${review.text}"</p>
+                </div>
+                <div class="text-[10px] text-brand-gold uppercase tracking-widest font-bold border-t border-brand-gold/10 pt-4">${review.date}</div>
+            `;
+            reviewsTrack.appendChild(div);
+        });
+
+        // Carousel Logic
+        const track = document.getElementById('reviews-carousel');
+        document.getElementById('nextReview').addEventListener('click', () => {
+            track.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+        document.getElementById('prevReview').addEventListener('click', () => {
+            track.scrollBy({ left: -400, behavior: 'smooth' });
+        });
+
+        // Gallery Data
+        const galleryImages = [
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991ccb70084987b43a9fc7c.jpg",
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b888cd4c39dec.jpg",
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c008498df82a9f498.jpg",
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c24813c1583b455d1.jpg",
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b886a01c39ddf.jpg",
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c00849823eca9f499.jpg",
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b88407fc39dea.jpg",
+            "https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6991cc7c899b8813a3c39deb.jpg"
+        ];
+        
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = galleryImages[index];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImg.src = galleryImages[currentImageIndex];
+                lightboxImg.style.opacity = '1';
+            }, 200);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImg.src = galleryImages[currentImageIndex];
+                lightboxImg.style.opacity = '1';
+            }, 200);
+        }
+
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if(e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard nav
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+
+        // Scroll Animations & Navbar Blur
+        const navbar = document.getElementById('navbar');
+        const observerOptions = {
+            threshold: 0, // Trigger immediately when visible
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        function triggerAnimations() {
+             const elements = document.querySelectorAll('.reveal-on-scroll, .reveal-stagger');
+            elements.forEach(el => {
+                observer.observe(el);
+            });
+            // Fail-safe: if observer doesn't trigger in 500ms, force visible
+            setTimeout(() => {
+               elements.forEach(el => {
+                   if(getComputedStyle(el).opacity === '0') {
+                       el.classList.add('is-visible');
+                   }
+               });
+            }, 500);
+        }
+
+        // Trigger on DOMContentLoaded and Window Load to be safe
+        document.addEventListener('DOMContentLoaded', triggerAnimations);
+        window.addEventListener('load', triggerAnimations);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'py-4', 'shadow-sm');
+                navbar.classList.remove('py-8');
+            } else {
+                navbar.classList.remove('glass-nav', 'py-4', 'shadow-sm');
+                navbar.classList.add('py-8');
+            }
+        });
+
+        // About Read More Logic
+        window.toggleAboutText = function() {
+            const moreText = document.getElementById('about-more-text');
+            const btn = document.getElementById('about-read-more-btn');
+            const icon = btn.querySelector('i');
+            
+            if (moreText.classList.contains('hidden')) {
+                moreText.classList.remove('hidden');
+                btn.innerHTML = 'ΔΙΑΒΑΣΤΕ ΛΙΓΟΤΕΡΑ <i data-lucide="chevron-up" class="w-3 h-3 ml-2"></i>';
+            } else {
+                moreText.classList.add('hidden');
+                btn.innerHTML = 'ΔΙΑΒΑΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ <i data-lucide="chevron-down" class="w-3 h-3 ml-2"></i>';
+            }
+            lucide.createIcons();
+        };
+
+        // Re-init icons for dynamic content
+        lucide.createIcons();
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
